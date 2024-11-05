@@ -1,4 +1,4 @@
-// src/app/layout.jsx
+// src/app/layout.js
 import "../app/globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow container mx-auto px-4 py-8">
+        <main className="flex-grow container mx-auto px-4 py-8 mt-24">
           {children}
         </main>
         <Footer />
