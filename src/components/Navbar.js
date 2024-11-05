@@ -28,7 +28,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 backdrop-blur-md shadow-lg rounded-full px-6 py-2 z-50 w-11/12 md:w-auto">
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 backdrop-blur-md shadow-lg rounded-full px-6 py-2 z-50 w-10/12 md:w-3/4 lg:w-1/2">
       <div className="flex items-center justify-between">
         <Link
           href="#top"
