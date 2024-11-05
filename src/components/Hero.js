@@ -2,11 +2,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-
-// Dynamically import Typewriter component with no SSR
-const Typewriter = dynamic(() => import("react-typewriter-effect"), {
-  ssr: false,
-});
+import { Typewriter } from "react-simple-typewriter";
 
 export default function Hero() {
   return (
@@ -16,14 +12,13 @@ export default function Hero() {
         <div className="text-2xl">
           <span>I'm </span>
           <Typewriter
-            textStyle={{ display: "inline", color: "inherit" }}
-            startDelay={100}
-            cursorColor="gray"
-            multiText={["a Developer", "a Photographer", "a Coder"]}
-            multiTextDelay={1500}
-            typeSpeed={50}
-            deleteSpeed={30}
-            loop
+            words={["a Developer", "a Photographer", "a Coder"]}
+            loop={0} // Set to 0 for infinite loop
+            cursor
+            cursorStyle="|"
+            typeSpeed={75}
+            deleteSpeed={50}
+            delaySpeed={3000}
           />
         </div>
       </div>
