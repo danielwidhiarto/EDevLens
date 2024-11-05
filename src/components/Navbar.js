@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 "use client";
 
 import Link from "next/link";
@@ -22,7 +21,7 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initialize on mount
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -30,19 +29,19 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-4xl px-8 py-4 rounded-lg transition-all duration-300 ${
-        isOpen ? "bg-white shadow-lg" : "bg-white bg-opacity-80 shadow-md"
+        isOpen ? "bg-gray-800 shadow-lg" : "bg-gray-800 bg-opacity-80 shadow-md"
       }`}
       style={{ backdropFilter: "blur(10px)" }}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between text-gray-100">
         <Link
           href="#top"
-          className="text-xl font-bold text-gray-800 hover:text-blue-500"
+          className="text-xl font-bold text-gray-100 hover:text-gray-400"
         >
           EDevLens
         </Link>
         <button
-          className="md:hidden text-gray-700 hover:text-blue-500 focus:outline-none"
+          className="md:hidden text-gray-100 hover:text-gray-400 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle navigation menu"
         >
@@ -76,8 +75,8 @@ export default function Navbar() {
         >
           <Link
             href="#about"
-            className={`block mt-2 md:mt-0 text-gray-700 hover:text-blue-500 ${
-              activeSection === "about" ? "text-blue-500 font-semibold" : ""
+            className={`block mt-2 md:mt-0 text-gray-400 hover:text-gray-200 ${
+              activeSection === "about" ? "text-gray-200 font-semibold" : ""
             }`}
             onClick={() => setIsOpen(false)}
           >
@@ -85,8 +84,8 @@ export default function Navbar() {
           </Link>
           <Link
             href="#projects"
-            className={`block mt-2 md:mt-0 text-gray-700 hover:text-blue-500 ${
-              activeSection === "projects" ? "text-blue-500 font-semibold" : ""
+            className={`block mt-2 md:mt-0 text-gray-400 hover:text-gray-200 ${
+              activeSection === "projects" ? "text-gray-200 font-semibold" : ""
             }`}
             onClick={() => setIsOpen(false)}
           >
@@ -94,8 +93,8 @@ export default function Navbar() {
           </Link>
           <Link
             href="#contact"
-            className={`block mt-2 md:mt-0 text-gray-700 hover:text-blue-500 ${
-              activeSection === "contact" ? "text-blue-500 font-semibold" : ""
+            className={`block mt-2 md:mt-0 text-gray-400 hover:text-gray-200 ${
+              activeSection === "contact" ? "text-gray-200 font-semibold" : ""
             }`}
             onClick={() => setIsOpen(false)}
           >
