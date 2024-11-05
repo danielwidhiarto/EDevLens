@@ -28,7 +28,12 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 backdrop-blur-md shadow-lg rounded-full px-6 py-2 z-50 w-10/12 md:w-3/4 lg:w-1/2">
+    <nav
+      className={`fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-4xl px-8 py-4 rounded-lg transition-all duration-300 ${
+        isOpen ? "bg-white shadow-lg" : "bg-white bg-opacity-80 shadow-md"
+      }`}
+      style={{ backdropFilter: "blur(10px)" }}
+    >
       <div className="flex items-center justify-between">
         <Link
           href="#top"
@@ -41,7 +46,6 @@ export default function Navbar() {
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle navigation menu"
         >
-          {/* Hamburger Icon */}
           <svg
             className="w-6 h-6"
             fill="none"
@@ -75,7 +79,7 @@ export default function Navbar() {
             className={`block mt-2 md:mt-0 text-gray-700 hover:text-blue-500 ${
               activeSection === "about" ? "text-blue-500 font-semibold" : ""
             }`}
-            onClick={() => setIsOpen(false)} // Close menu on link click
+            onClick={() => setIsOpen(false)}
           >
             About
           </Link>
